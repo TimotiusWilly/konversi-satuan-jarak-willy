@@ -51,6 +51,7 @@ def index():
         units=list(faktor_dari_1meter.keys()), 
         hasil=hasil_konversi
     )
+app=app
 
 if __name__ == '__main__':
     app.run(debug=True)
@@ -148,3 +149,4 @@ if __name__ == '__main__':
 # if __name__ == '__main__':
 #     app.run(debug=True)
     
+
