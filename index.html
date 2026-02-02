@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Satuan Jarak</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Konversi Satuan Jarak</h1>
+        
+        <form method="POST">
+            
+            <div class="input-group">
+                <label for="nilai">Input Angka (Nilai Awal):</label>
+                <input type="number" id="nilai" name="nilai" step="any" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="satuan_awal">Satuan Jarak Awal:</label>
+                <select id="satuan_awal" name="satuan_awal" required>
+                    {% for unit in units %}
+                        <option value="{{ unit }}">{{ unit }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="satuan_konversi">Satuan Jarak Konversi:</label>
+                <select id="satuan_konversi" name="satuan_konversi" required>
+                    {% for unit in units %}
+                        <option value="{{ unit }}">{{ unit }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <button type="submit">Konversi</button>
+        </form>
+        
+        {% if hasil %}
+            <div class="result">
+                Hasil Konversi: {{ hasil }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Jarak</title>
+</head>
+<body>
+    <div class=form-konversi-jarak>
+        <form>
+            <select id="Satuan-panjang" onchange="convertTo(this).value">
+            <option value="Kilometer">Kilometer (KM)</option>
+            <option value="Hektometer">Hektometer (HM)</option>
+            <option value="Dekameter">Dekameter (Dam)</option>
+            <option value="Meter" selected="selected">Meter (M)</option>
+            <option value="Desimeter">Desimeter (DM)</option>
+            <option value="Centimeter">Centimeter (CM)</option>
+            <option value="Milimeter">Milimeter (MM)</option>
+            <option value="Inchi">Inchi/inci (In)</option>
+            <option value="Feet">Feet/kaki (Ft)</option>
+            <option value="Yard">Yard</option>
+            <option value="Mile">Mile/mil</option>
+            </select>
+            <div class="control-input">
+                <input type="text" id="inp-form" class="form-control" onkeyup="convertTo(satuan)" placeholder="Input angka disini bosku!!">
+            </div>
+        </form>
+        <center><h1>Hasilnya</h1></center>
+        <label for="" class="control-label">Kilometer (KM)</label>
+        <div class="control-input">
+             <label for="" type="text" id="inp-km" class="form-control" onkeyup="execKM()"></label>
+        </div>
+        <label for="" class="control-label">Hektometer(HM)</label>
+        <div class="control-input">
+             <label for="" type="text" id="inp-hm" class="form-control" onkeyup="execHM()"></label>
+        </div>
+        <label for="" class="control-label">Dekameter(Dam)</label>
+        <div class="control-input">
+             <label for="" type="text" id="inp-dam" class="form-control" onkeyup="execDam()"></label>
+        </div>
+        <label for="" class="control-label">Meter(M)</label>
+        <div class="control-input">
+             <label for="" type="text" id="inp-m" class="form-control" onkeyup="execM()"></label>
+        </div>
+    
+
+    {%if result is not none %}
+        <h2>Hasil: {{ result }} </h2>
+    {% endif %}
+</body>
+</html> -->
